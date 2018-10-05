@@ -17,21 +17,37 @@ function activate(context) {
     let disposable = vscode.commands.registerCommand('extension.sayHello', function () {
         // The code you place here will be executed every time your command is executed
         //vscode.window.showInformationMessage();
-        var result  = vscode.window.activeTextEditor;
-        console.log( result);
-        console.log(result.selection);
+        var activeText = vscode.window.activeTextEditor;
+        
+ 
+        var result = activeText.document.getText(activeText.selection);
+        stringsCopieds.push(result);
+        // Display a message box to the user
+        vscode.window.showInformationMessage( result);
+    });
+    let copy = vscode.commands.registerCommand('extension.copy', function () {
+        // The code you place here will be executed every time your command is executed
+        //vscode.window.showInformationMessage();
+        var activeText = vscode.window.activeTextEditor;
+        var result = activeText.document.getText(activeText.selection);
         
         //console.log( result._documentData._lines[0]);
         // Display a message box to the user
-        stringsCopieds.push(result._documentData._lines[0]);
-        var stringNews ='';
-        for( var element in stringsCopieds ){
-            stringNews = stringNews + stringsCopieds[element];
-        }
-        vscode.window.showInformationMessage( stringNews);
+        stringsCopieds.push(result);
+        // var stringNews ='';
+        // for( var element in stringsCopieds ){
+        //     stringNews = stringNews +  stringsCopieds[element];
+        // }
+        vscode.window.showInformationMessage( result);
     });
-
+    let paste = vscode.commands.registerCommand('extension.paste', function () {
+        vscode.window.showInformationMessage(  stringsCopieds.pop());
+    });
+    // context.subscriptions.push(paste);
+    // context.subscriptions.push(copy);
     context.subscriptions.push(disposable);
+    
+    
 }
 exports.activate = activate;
 

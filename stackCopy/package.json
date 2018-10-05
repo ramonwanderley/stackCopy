@@ -19,6 +19,14 @@
             {
                 "command": "extension.sayHello",
                 "title": "Hello World"
+            },
+            {
+                "command": "extension.copy",
+                "title": "Stack Copy"
+            },
+            {
+                "command": "extension.paste",
+                "title": "Stack Paste"
             }
         ]
     },
