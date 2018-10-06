@@ -38,7 +38,15 @@ function activate(context) {
         vscode.window.showInformationMessage( result);
     });
     let paste = vscode.commands.registerCommand('extension.paste', function () {
-        vscode.window.showInformationMessage(  stringsCopieds.pop());
+        var result = stringsCopieds.pop();
+        var activeText = vscode.window.activeTextEditor;
+       // console.log();
+        //activeText.document.insert(activeText.selection.start , result);
+       // activeText.document.text(result);
+       activeText.edit(editBuilder => {
+        editBuilder.insert(/*new vscode.Range(0,0,1,0)*/activeText.selection.start, result);
+    });
+        vscode.window.showInformationMessage(result);
     });
     context.subscriptions.push(paste);
     context.subscriptions.push(copy);
