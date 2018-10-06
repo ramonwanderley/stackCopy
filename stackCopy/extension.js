@@ -23,7 +23,7 @@ function activate(context) {
         var result = activeText.document.getText(activeText.selection);
         stringsCopieds.push(result);
         // Display a message box to the user
-        vscode.window.showInformationMessage( result);
+        vscode.window.showInformationMessage('adicionado');
     });
     let copy = vscode.commands.registerCommand('extension.copy', function () {
         // The code you place here will be executed every time your command is executed
@@ -35,18 +35,15 @@ function activate(context) {
         // Display a message box to the user
         stringsCopieds.push(result);
        
-        vscode.window.showInformationMessage( result);
+        vscode.window.showInformationMessage('Posição adicionada: ' + (stringsCopieds.length - 1));
     });
     let paste = vscode.commands.registerCommand('extension.paste', function () {
         var result = stringsCopieds.pop();
         var activeText = vscode.window.activeTextEditor;
-       // console.log();
-        //activeText.document.insert(activeText.selection.start , result);
-       // activeText.document.text(result);
        activeText.edit(editBuilder => {
-        editBuilder.insert(/*new vscode.Range(0,0,1,0)*/activeText.selection.start, result);
+        editBuilder.insert(activeText.selection.start, result);
     });
-        vscode.window.showInformationMessage(result);
+        vscode.window.showInformationMessage('Elementos restantes: ' + (stringsCopieds.length));
     });
     context.subscriptions.push(paste);
     context.subscriptions.push(copy);
