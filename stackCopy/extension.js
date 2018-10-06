@@ -34,17 +34,14 @@ function activate(context) {
         //console.log( result._documentData._lines[0]);
         // Display a message box to the user
         stringsCopieds.push(result);
-        // var stringNews ='';
-        // for( var element in stringsCopieds ){
-        //     stringNews = stringNews +  stringsCopieds[element];
-        // }
+       
         vscode.window.showInformationMessage( result);
     });
     let paste = vscode.commands.registerCommand('extension.paste', function () {
         vscode.window.showInformationMessage(  stringsCopieds.pop());
     });
-    // context.subscriptions.push(paste);
-    // context.subscriptions.push(copy);
+    context.subscriptions.push(paste);
+    context.subscriptions.push(copy);
     context.subscriptions.push(disposable);
     
     

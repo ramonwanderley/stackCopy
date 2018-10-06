@@ -22,13 +22,21 @@
             },
             {
                 "command": "extension.copy",
-                "title": "Stack Copy"
+                "title": "Stack Copy",
+                "key": "ctrl+f1",
+                "mac": "cmd+f1"
             },
             {
                 "command": "extension.paste",
                 "title": "Stack Paste"
             }
-        ]
+        ],
+        "keybindings": [{
+            "command": "extension.copy",
+            "key": "ctrl+f1",
+            "mac": "cmd+f1",
+            "when": "editorTextFocus"
+        }]
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
