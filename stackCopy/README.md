@@ -1,14 +1,14 @@
-# stackCopy README
+# stackCopy Extension VSCode
 
-This is the README for your extension "stackCopy". After writing up a brief description, we recommend including the following sections.
+O stackCopy permite você copiar e colar textos em pilha. Uma proposta simples pra uma mudança enorme.
 
-## Features
+## Funcionalidades
 
 Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
 For example if there is an image subfolder under your extension project workspace:
 
-\!\[feature X\]\(images/feature-x.png\)
+![Alt Text](https://imgur.com/a/TQFcy2l)
 
 > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
@@ -31,21 +31,12 @@ This extension contributes the following settings:
 
 Calling out known issues can help limit users opening duplicate issues against your extension.
 
-## Release Notes
+## Lançamentos
 
-Users appreciate release notes as you update your extension.
 
-### 1.0.0
+### 0.0.1
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+Lançamento inicial com a copia e cola em pilha.
 
 -----------------------------------------------------------------------------------------------------------
 
