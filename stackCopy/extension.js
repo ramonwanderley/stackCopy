@@ -27,15 +27,25 @@ function activate(context) {
        
         vscode.window.showInformationMessage('Posição adicionada: ' + (stringsCopieds.length - 1));
     });
-    let paste = vscode.commands.registerCommand('extension.paste', function () {
+    let paste_and_pop = vscode.commands.registerCommand('extension.paste', function () {
+        //This command will paste and pop the top of the stack.
         var result = stringsCopieds.pop();
+        var activeText = vscode.window.activeTextEditor;
+       activeText.edit(editBuilder => {
+        editBuilder.insert(activeText.selection.start, result);
+    });
+    let paste_and_keep = vscode.commands.registerCommand('extension.paste', function () {
+        var size = stringsCopieds.length;
+        var result = stringsCopieds[size-1];
+        //Gets the top of the stack but do not pop it.
         var activeText = vscode.window.activeTextEditor;
        activeText.edit(editBuilder => {
         editBuilder.insert(activeText.selection.start, result);
     });
         vscode.window.showInformationMessage('Elementos restantes: ' + (stringsCopieds.length));
     });
-    context.subscriptions.push(paste);
+    context.subscriptions.push(paste_and_pop);
+    context.subscriptions.push(paste_and_keep);
     context.subscriptions.push(copy);
     
     

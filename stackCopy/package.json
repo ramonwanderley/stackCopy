@@ -21,8 +21,12 @@
                 "title": "Stack Copy"
             },
             {
-                "command": "extension.paste",
-                "title": "Stack Paste"
+                "command": "extension.paste_and_pop",
+                "title": "Stack Paste and Pop"
+            },
+            {
+                "command": "extension.paste_and_keep",
+                "title": "Stack Paste and Keep"
             }
         ],
         "keybindings": [
@@ -33,9 +37,15 @@
             "when": "editorHasSelection"
             },
             {
-            "command": "extension.paste",
+            "command": "extension.paste_and_pop",
             "key": "ctrl+f2",
             "mac": "cmd+f2",
+            "when": "editorFocus"
+            },
+            {
+            "command": "extension.paste_and_keep",
+            "key": "ctrl+f3",
+            "mac": "cmd+f3",
             "when": "editorFocus"
             }
         ]
