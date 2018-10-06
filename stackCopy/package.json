@@ -32,19 +32,19 @@
         "keybindings": [
             {
             "command": "extension.copy",
-            "key": "ctrl+f1",
+            "key": "f1",
             "mac": "cmd+f1",
             "when": "editorHasSelection"
             },
             {
             "command": "extension.paste_and_pop",
-            "key": "ctrl+f2",
+            "key": "f2",
             "mac": "cmd+f2",
             "when": "editorFocus"
             },
             {
             "command": "extension.paste_and_keep",
-            "key": "ctrl+f3",
+            "key": "f3",
             "mac": "cmd+f3",
             "when": "editorFocus"
             }
@@ -66,5 +66,3 @@
         "url": "https://github.com/ramonwanderley/stackCopy.git"
     }
 }
-
-
