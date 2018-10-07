@@ -2,7 +2,7 @@
     "name": "stackCopy",
     "displayName": "Stack Copy",
     "description": "The StackCopy project allows the copying and pasting of stack contents being added to extensions in vscode.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "ramonwanderley13",
     "engines": {
         "vscode": "^1.27.0"
