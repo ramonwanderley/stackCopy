@@ -21,21 +21,31 @@
                 "title": "Stack Copy"
             },
             {
-                "command": "extension.paste",
-                "title": "Stack Paste"
+                "command": "extension.paste_and_pop",
+                "title": "Stack Paste and Pop"
+            },
+            {
+                "command": "extension.paste_and_keep",
+                "title": "Stack Paste and Keep"
             }
         ],
         "keybindings": [
             {
             "command": "extension.copy",
-            "key": "ctrl+f1",
+            "key": "f1",
             "mac": "cmd+f1",
             "when": "editorHasSelection"
             },
             {
-            "command": "extension.paste",
-            "key": "ctrl+f2",
+            "command": "extension.paste_and_pop",
+            "key": "f2",
             "mac": "cmd+f2",
+            "when": "editorFocus"
+            },
+            {
+            "command": "extension.paste_and_keep",
+            "key": "f3",
+            "mac": "cmd+f3",
             "when": "editorFocus"
             }
         ]
@@ -56,5 +66,3 @@
         "url": "https://github.com/ramonwanderley/stackCopy.git"
     }
 }
-
-
